@@ -4,7 +4,7 @@
   
   // AI Configuration - Set your API key here
   const AI_CONFIG = {
-    apiKey: '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', // OpenRouter API key (embedded)
+    apiKey: 'YOURAPIKEY', // OpenRouter API key (embedded)
     provider: 'openrouter', // 'openrouter', 'openai', 'claude', or 'gemini'
     model: 'x-ai/grok-4-fast:free' // Prefer Grok 4 (fast, free tier) via OpenRouter
   };
