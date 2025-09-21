@@ -17,9 +17,10 @@ A Chrome extension that, immediately after you copy code on any webpage, prompts
 
 ## Install (Load Unpacked)
 1. Build steps are not required for this minimal version.
-2. Open Chrome and navigate to `chrome://extensions`.
-3. Enable "Developer mode" (top-right).
-4. Click "Load unpacked" and select this folder.
+2. In content_script.js change 'YOURAPIKEY' to be your api key created on https://openrouter.ai/settings/keys
+3. Open Chrome and navigate to `chrome://extensions`.
+4. Enable "Developer mode" (top-right).
+5. Click "Load unpacked" and select this folder.
 
 ## Usage
 - Select code on any webpage and press Cmd+C / Ctrl+C.
