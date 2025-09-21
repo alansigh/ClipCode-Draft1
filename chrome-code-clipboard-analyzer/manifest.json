@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "ClipCode Analyst",
+  "version": "0.1.0",
+  "description": "Analyze code immediately after you copy it: quick explanation, sample tests, and review questions.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "<all_urls>",
+    "https://api.openai.com/*",
+    "https://api.anthropic.com/*",
+    "https://generativelanguage.googleapis.com/*",
+    "https://openrouter.ai/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content_script.js"],
+      "run_at": "document_start"
+    }
+  ],
+  "action": {
+    "default_title": "ClipCode Analyst"
+  }
+}

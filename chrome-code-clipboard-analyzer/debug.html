@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Debug Chrome Extension</title>
+    <style>
+        body { font-family: system-ui; margin: 40px; }
+        .code { background: #f5f5f5; padding: 20px; margin: 10px 0; border-radius: 8px; }
+        .step { margin: 20px 0; padding: 20px; border-left: 4px solid #007acc; background: #f8f9fa; }
+    </style>
+</head>
+<body>
+    <h1>Chrome Code Clipboard Analyzer - Debug</h1>
+    
+    <div class="step">
+        <h2>Step 1: Hard Reload Extension</h2>
+        <p>Try these methods in order:</p>
+        <ol>
+            <li>Go to <code>chrome://extensions</code></li>
+            <li>Find "ClipCode Analyst"</li>
+            <li>Click the reload button (🔄)</li>
+            <li>If that doesn't work, toggle "Developer mode" off and on</li>
+            <li>Then try the reload button again</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>Step 2: Remove and Re-add Extension</h2>
+        <p>If reload doesn't work:</p>
+        <ol>
+            <li>Click "Remove" on the extension</li>
+            <li>Click "Load unpacked"</li>
+            <li>Select this folder: <code>/Users/alanh/Projects/chrome-code-clipboard-analyzer</code></li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>Step 3: Test the Extension</h2>
+        <p>Copy this JavaScript code to test:</p>
+        <div class="code">
+function fibonacci(n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+const result = fibonacci(10);
+console.log('Fibonacci result:', result);
+        </div>
+        <p>After copying, you should see:</p>
+        <ul>
+            <li>Language detected as "javascript"</li>
+            <li>Two tabs: "Summary" and "Line Analysis"</li>
+            <li>Click "Line Analysis" to see line-by-line insights</li>
+        </ul>
+    </div>
+
+    <div class="step">
+        <h2>Step 4: Check Browser Console</h2>
+        <p>If still not working:</p>
+        <ol>
+            <li>Open Developer Tools (F12)</li>
+            <li>Go to Console tab</li>
+            <li>Look for any error messages related to the extension</li>
+            <li>Copy some code and check if there are JavaScript errors</li>
+        </ol>
+    </div>
+
+    <div class="step">
+        <h2>Step 5: Verify File Contents</h2>
+        <p>File should be updated to version with tabs. Key indicators:</p>
+        <ul>
+            <li>File size should be ~26KB (was ~11KB before)</li>
+            <li>Should contain "Line Analysis" text</li>
+            <li>Should have "analyzeLineByLine" function</li>
+        </ul>
+    </div>
+
+    <script>
+        // This script will test if the updated extension is working
+        document.addEventListener('copy', () => {
+            console.log('Copy event detected - extension should show popup if enabled');
+        });
+    </script>
+</body>
+</html>
